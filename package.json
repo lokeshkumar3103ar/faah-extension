@@ -1,0 +1,82 @@
+{
+  "name": "faaah",
+  "displayName": "Faaah! – Error Sound",
+  "description": "Plays a dramatic 'faaah' sound whenever a terminal command fails (non-zero exit code). Never silently fail again.",
+  "version": "0.0.1",
+  "publisher": "LokeshKumarAR",
+  "icon": "images/icon.png",
+  "author": {
+    "name": "Lokesh Kumar A R"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lokeshkumar3103ar/faah-extension"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "sound",
+    "error",
+    "terminal",
+    "fun",
+    "notification",
+    "audio"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Faaah!",
+      "properties": {
+        "faaah.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the Faaah! sound on terminal errors."
+        },
+        "faaah.customSoundPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to a custom MP3/WAV file to play instead of the default faaah sound. Leave empty to use the built-in sound."
+        },
+        "faaah.volume": {
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Playback volume (0.0 = silent, 1.0 = full). macOS and Linux only."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "faaah.toggle",
+        "title": "Faaah!: Toggle Sound On/Off"
+      },
+      {
+        "command": "faaah.test",
+        "title": "Faaah!: Play Test Sound"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "^20.14.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.5"
+  }
+}

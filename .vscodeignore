@@ -1,0 +1,13 @@
+# Files/folders excluded from the published .vsix package
+# Keep this list tight – smaller package = faster install
+
+.vscode/**
+.vscode-test/**
+src/**
+.gitignore
+.eslintrc.json
+tsconfig.json
+**/*.map
+**/*.ts
+!node_modules
+node_modules/**
