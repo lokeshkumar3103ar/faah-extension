@@ -1,6 +1,6 @@
 {
-  "name": "faaah",
-  "displayName": "Faaah! – Error Sound",
+  "name": "faah-terminal-sound",
+  "displayName": "Faaah! – TerminalError Sound",
   "description": "Plays a dramatic 'faaah' sound whenever a terminal command fails (non-zero exit code). Never silently fail again.",
   "version": "0.0.1",
   "publisher": "LokeshKumarAR",
